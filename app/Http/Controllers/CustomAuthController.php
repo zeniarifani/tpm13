@@ -17,11 +17,13 @@ class CustomAuthController extends Controller
     public function registerTeam(request $request){
         $request->validate([
             'name'=>'required',
-            'password'=>'required|min:8'
+            'password'=>['required','confirmed','min:8'],
+            'binusian'=>'required'
         ]);
         $team = new Team();
         $team->name = $request->name;
         $team->password = Hash::make($request->password);
+        $team->binusian = $request->binusian;
         $team->save();
         $res = $team;
         if($res){

@@ -33,14 +33,18 @@
                         <span class="text-danger">@error('password') {{$message}} @enderror</span>
                     </div>
 
-                    <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Binusian/Non-Binusian
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Binusian</a></li>
-                                <li><a class="dropdown-item" href="#">Non-Binusian</a></li>
-                            </ul>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete= "new-password">
+                        <span class="text-danger" >@error('password') {{$message}} @enderror</span>
+                    </div>
+
+                    <div class="form-group mt-5">
+                        <label class="font-weight-bold">Mahasiswa Binus/Bukan</label>
+                        <select name="binusian" class="form-control">
+                            <option value="Binusian">Binusian</option>
+                            <option value="NonBinusian">Non-Binusian</option>
+                        <select>
                     </div>
 
                     <div class="form-group">
