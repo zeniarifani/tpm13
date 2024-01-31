@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Team;
 use Hash;
+use Session;
 class CustomAuthController extends Controller
 {
     public function login(){
@@ -35,6 +36,20 @@ class CustomAuthController extends Controller
         'name'=>'required',
         'password'=>'required|min:8'
         ]);
+        $team = Team::where('name','=',$request->name)->first();
+        if($team){
+            if(Hash::check($request->password,$team->password)){
+                $request->session()->put('loginId',$team->id);
+                return redirect('dashboard');
+            }else{
+                return back()->with('fail','Wrong Password.');
+            }
+        }else {
+            return back()->with('fail','This Group Name is not registered.');
+        }
+    }
+    public function dashboard(){
+        return "This is dashboard";
     }
 
 }

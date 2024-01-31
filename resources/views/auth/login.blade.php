@@ -12,26 +12,33 @@
             <div class="col-md-4 col-md-offset-4" style="margin-top:20px;">
                 <h4>Login</h4>
                 <hr>    
-                <form action="{{route('login-team)}}" method="post">
+            <form action="{{route('login-team')}}" method="post">
+                    @if(Session::has('success'))
+                    <div class="alert alert-success">{{Session::get('success')}}</div>
+                    @endif
+                    @if(Session::has('fail'))
+                    <div class="alert alert-danger">{{Session::get('fail')}}</div>
+                    @endif
                     @csrf
                     <div class="form-group">
                         <label for="name">Group Name</label>
-                        <input type="text" class="form-control" placeholder="Enter Group Name"
+                        <input type="text" class="form control" placeholder="Enter Group Name"
                         name="name" value="{{old('name')}}">
-                        <!-- <span class="text-danger">@error('name') {{$message}} @enderror</span> -->
+                        <span class="text-danger">@error('name') {{$message}} @enderror</span>
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
                         <input type="password" class="form control" placeholder="Enter Password"
-                        name="password" value="">
+                        name="password" value="{{old('password')}}">
                         <span class="text-danger">@error('password') {{$message}} @enderror</span>
                     </div>
+
+
                     <div class="form-group">
                         <button class="btn btn-block btn-primary" type="submit">Login</button>
                     </div>
 
-                    <br>
-                    <a href="registration">New User</a>
+                    <a href="registration">Registere Here</a>
 
             </form>
             </div>
