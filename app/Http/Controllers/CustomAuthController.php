@@ -16,9 +16,7 @@ class CustomAuthController extends Controller
     public function registration(){
         return view("auth.registration");
     }
-    public function registerTeam(request $request){
-
-
+    public function Register(request $request){
         $request->validate([
             'name'=>'required',
             'password'=>['required','confirmed','min:8'],
@@ -51,6 +49,7 @@ class CustomAuthController extends Controller
 
         $team->save();
         $res = $team;
+
         if($res){
             $teams = Team::where('user_id', Auth::id())->get();
             return view('dashboard', ['teams' => $teams])->with('success', 'You have registered successfully.');

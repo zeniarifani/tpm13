@@ -14,11 +14,20 @@ use App\Http\Controllers\CustomAuthController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage');
 });
-Route::get('/login',[CustomAuthController::class,'login']);
-Route::get('/registration',[CustomAuthController::class,'registration']);
-Route::post('/register-team',[CustomAuthController::class,'registerTeam'])->name('register-team');
-Route::post('/login-team',[CustomAuthController::class,'loginTeam'])->name('login-team');
-Route::get('/dashboard', 'CustomAuthController@index')->name('dashboard');
+Route::get('/Register', function () {
+    return view('Register');
+});
+Route::get('/Register2', function () {
+    return view('Register2');
+});
+Route::get('/Register3', function () {
+    return view('Register3');
+});
+// Route::get('/login',[CustomAuthController::class,'login']);
+// Route::get('/Register',[CustomAuthController::class,'Register']);
+// Route::post('/register-team',[CustomAuthController::class,'registerTeam'])->name('register-team');
+// Route::post('/login-team',[CustomAuthController::class,'loginTeam'])->name('login-team');
+// Route::get('/dashboard', 'CustomAuthController@index')->name('dashboard');
 
