@@ -13,10 +13,20 @@ return new class extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->string('name');
             $table->string('password');
             $table->string('binusian');
+            $table->string('leader_name');
+            $table->string('email_leader');
+            $table->bigInteger('whatsapp_leader');
+            $table->string('line');
+            $table->string('github');
+            $table->date('birthdate');
+            $table->string('cv');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('teams')->onDelete('cascade');
         });
     }
 

@@ -20,4 +20,5 @@ Route::get('/login',[CustomAuthController::class,'login']);
 Route::get('/registration',[CustomAuthController::class,'registration']);
 Route::post('/register-team',[CustomAuthController::class,'registerTeam'])->name('register-team');
 Route::post('/login-team',[CustomAuthController::class,'loginTeam'])->name('login-team');
-Route::get('/dashboard',[CustomAuthController::class,'dashboard']);
+Route::get('/dashboard', 'CustomAuthController@index')->name('dashboard');
+
