@@ -13,6 +13,6 @@ class Team extends Model
         return $this->belongsTo(Team::class, 'user_id');
     }
     protected $fillable = [
-        'name','password','binusian','leader_name','email_leader','whatsapp_leader','line','github','birthdate','cv',
+        'name','password','binusian','leader_name','email_leader','whatsapp_leader','line','github','birthdate','birthplace','cv','id_card'
     ];
 }

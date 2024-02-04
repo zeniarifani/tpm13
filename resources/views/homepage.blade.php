@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="{{ asset('css/homepage.css') }}">
+  <title>Hackathon</title>
+  <link rel="stylesheet" href="{{ asset('css/Homepage.css') }}">
   
   <!-- link to font awesome -->
   <script src="https://kit.fontawesome.com/c07884273f.js" crossorigin="anonymous"></script>
@@ -13,28 +14,30 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,700&display=swap" rel="stylesheet">
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   
 </head>
 <body>
+  <audio id="Background-music" src="/audio/homepage bg music.mp3" autoplay loop></audio>
   <header>
     <div class="navbar" id="navbar">
       <div class="logo-hackathon">
-        <img src="/image/logo.png" alt="">
+        <a href="#landing-page"><img src="/image/logo.png" alt=""></a>
       </div>
       <div class="navLinks" id="navLinks">
-        <a href="">Home <span></span></a>
-        <a href="">Champion Prizes <span></span></a>
-        <a href="">Mentor & Jury <span></span></a>
-        <a href="">Timeline <span></span></a>
-        <a href="">Login <span></span></a>
+        <a href="#landing-page">Home <span></span></a>
+        <a href="#championPage">Champion Prizes <span></span></a>
+        <a href="#mentor-container">Mentor & Jury <span></span></a>
+        <a href="#timeline-container">Timeline <span></span></a>
+        <a href="login">Login <span></span></a>
+        <audio id="beep" preload="auto" src="/audio/hover sfx.mp3"></audio>
       </div>
     </div>
   </header>
   <div class="container">
-    
-    
-    
-    <div class="landing-page">
+    <div class="landing-page" id="landing-page">
       <div class="landing-page-text">
         <img src="/image/TechnoScape.png" alt="">
         <h1>Hackathon</h1>
@@ -51,14 +54,19 @@
           <a href="#FAQ-container">FAQ</a>
         </div> 
       </div>
-        
+        <div class="red-circle">
+        <img src="/red circle design.png" alt="">
+      </div>
     </div>
 
     <br>
 
-    <div class="champion-page">
+    <div class="champion-page" id="championPage">
       <div class="champion-container">      <h1>Champion</h1>
-      <div class="blue-box-decor-container"><div class="blue-box-decor"></div></div>
+      <div class="blue-box-decor-container">
+          <div class="blue-box-decor"></div>
+          <div class="blue-box-decor2"></div>
+        </div>
       </div>
 
       <h1 class="prize-text">Prizes</h1>
@@ -81,6 +89,10 @@
               <div class="trophy-background">
                 <img src="/image/trophy outline.png" alt="">
               </div>
+            </div>
+            <div class="red-box-decor-container">
+              <div class="red-box-decor"></div>
+              <div class="red-box-decor2"></div>
             </div>
           </div>
 
@@ -125,7 +137,8 @@
         </div>
       </div>
     </div>
-    <div class="mentor-container">
+    
+    <div class="mentor-container" id="mentor-container">
       <div class="mentor-text-container">
         <div class="animated-text-mentors">
           <div class="letters-mentors" id="letter1">O</div>
@@ -164,6 +177,9 @@
     
     <div class="juri-container">
       
+<div class="star" id="star1"><img src="/image/star.png" alt=""></div>
+      <div class="star" id="star2"><img src="/image/star.png" alt=""></div>
+      <div class="star" id="star3"><img src="/image/star.png" alt=""></div>
       <div class="juri-photos">
       <div class="juri1-container">
         <img id="juri1" class="juries" src="/image/juri/Juri1.png" alt="">
@@ -208,6 +224,18 @@
     
     <div class="about-button-container">
       <button class="about-button"><a href="https://drive.google.com/file/d/1FQef4_keY9dA3pWDiZAiuICxqEr8-iVJ/view">Guidebook</a></button>
+    </div>
+<div class="about-us-decor" id="about-us-decor1">
+      <img src="/image/about us decor.png" alt="">
+    </div>
+    <div class="about-us-decor" id="about-us-decor2">
+      <img src="/image/about us decor2.png" alt="">
+    </div>
+    <div class="about-us-decor" id="about-us-decor3">
+      <img src="/image/about us decor3.png" alt="">
+    </div>
+    <div class="about-us-decor" id="about-us-decor4">
+      <img src="/image/about us decor4.png" alt="">
     </div>
   </div>
     
@@ -312,7 +340,7 @@
       </div>
     </div>
 
-    <div class="timeline-container">
+    <div class="timeline-container" id="timeline-container">
       <div class="timeline-text">
         <h2 class="timeline-text1">TIMELINE</h2>
         <h2 class="timeline-text2">TIMELINE</h2>
@@ -377,6 +405,9 @@
           <img class="glair" src="/image/Sponsors/Silver 5.png" alt="Glair.ai">
           
         </div>
+      </div>
+<div class="timeline-Decor">
+        <img src="/image/timeline Decor.png" alt="">
       </div>
     </div>
 
@@ -470,7 +501,7 @@
         </div>
       </div>
 
-      <div class="form-container">
+      <div id="form-container">
         <div class="submitForm-text">
           <div class="submitForm-title">
             Contact Us

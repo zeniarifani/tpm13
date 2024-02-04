@@ -22,8 +22,10 @@ return new class extends Migration
             $table->bigInteger('whatsapp_leader');
             $table->string('line');
             $table->string('github');
+            $table->string('birthplace');
             $table->date('birthdate');
             $table->string('cv');
+            $table->string('id_card');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('teams')->onDelete('cascade');

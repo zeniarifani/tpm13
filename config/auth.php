@@ -14,8 +14,8 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
-        'passwords' => 'users',
+        'guard' => 'teams',
+        'passwords' => 'teams',
     ],
 
     /*
@@ -34,12 +34,21 @@ return [
     | Supported: "session"
     |
     */
-
+    
     'guards' => [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'team' => [
+            'driver' => 'session',
+            'provider' => 'teams',
+        ],
+        'api' => [
+            'driver' => 'token',
+            'provider' => 'users',
+            'hash' => false,
+        ]
     ],
 
     /*
@@ -64,12 +73,18 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+        'teams' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Team::class,
+        ],
 
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
     ],
+
+    
 
     /*
     |--------------------------------------------------------------------------
